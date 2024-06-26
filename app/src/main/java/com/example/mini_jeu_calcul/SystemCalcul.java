@@ -1,23 +1,26 @@
 package com.example.mini_jeu_calcul;
+
 import java.util.Random;
 import java.util.ArrayList;
 
 
 public class SystemCalcul {
-    private int ValeurMax = 100 ;
+    private final int ValeurMax = 100 ;
     private double Resultat;
-    private ArrayList<Integer> TableauValeur = new ArrayList<>();
-    ArrayList<String> TableauOperateur = new ArrayList<>();
+    private ArrayList<Double> TableauValeur = new ArrayList<>();
+    private ArrayList<String> TableauOperateur = new ArrayList<>();
+
+    private ArrayList<Double> TableauValeurTemp = new ArrayList<>();
+    private ArrayList<String> TableauOperateurTemp = new ArrayList<>();
 
 
-    private int GenerateurAleatoire (int Max)
-    {
-        {
-            Random random = new Random();
-            return random.nextInt(Max);
-        }
+    private double GenerateurAleatoire(int Max) {
+        Random random = new Random();
+        int valeurAleatoire = random.nextInt(Max); // Génère un nombre aléatoire entre 0 (inclus) et Max (exclus)
+        double valeurDouble = (double) valeurAleatoire; // Convertit l'int en double
+        return valeurDouble;
     }
-    private String GenerateurOperateur (int Max)
+    private String GenerateurOperateur ()
     {
         // Définir les opérateurs disponibles
         char[] operateurs = {'+', '-', '*', '/'};
@@ -42,7 +45,7 @@ public class SystemCalcul {
         Taille--;
         for (int index = 0; index < Taille; index++)
         {
-            TableauValeur.add(GenerateurAleatoire(ValeurMax));
+            TableauOperateur.add(GenerateurOperateur());
         }
     }
 
@@ -76,25 +79,77 @@ public class SystemCalcul {
         return builder.toString(); // Retourner la chaîne concaténée
     }
 
-
-
-
-    public double evaluerExpression(String expressionString) {
-
-        return Resultat ;
+    private void UpdateTabTemp(int index , double ResTemp) {
+        TableauValeurTemp.set(index,ResTemp);
+        TableauValeurTemp.remove(index+1);
+        TableauOperateurTemp.remove(index);
     }
 
+
+    private void CalculerResultat(int Taille) {
+        Resultat = 0;
+        double ResTemp ;
+        TableauValeurTemp = TableauValeur;
+        TableauOperateurTemp = TableauOperateur;
+        for (int index = 0; index < Taille-1; index++)
+        {
+            switch (TableauOperateurTemp.get(index)) {
+                case "*":
+                    ResTemp =TableauValeurTemp.get(index) * TableauValeurTemp.get(index+1);
+                    Resultat = Resultat +  ResTemp;
+                    UpdateTabTemp(index, ResTemp);
+                    break;
+                case "/":
+                    ResTemp =TableauValeurTemp.get(index) / TableauValeurTemp.get(index+1);
+                    Resultat = Resultat + ResTemp;
+                    UpdateTabTemp(index, ResTemp);
+                    break;
+                default:
+                    break;
+            }
+        }
+        Taille = TableauValeurTemp.size();
+        for (int index = 0; index < Taille-1; index++)
+        {
+            switch (TableauOperateurTemp.get(index)) {
+                case "+":
+                    ResTemp =TableauValeurTemp.get(index) + TableauValeurTemp.get(index+1);
+                    Resultat = Resultat + ResTemp;
+                    UpdateTabTemp(index, ResTemp);
+                    break;
+                case "-":
+                    ResTemp =TableauValeurTemp.get(index) /-TableauValeurTemp.get(index+1);
+                    Resultat = Resultat + ResTemp;
+                    UpdateTabTemp(index, ResTemp);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
 
     public String GenererCalcul (int Taille)
     {
         String Calcul;
 
         GenererTableauValeur(Taille);
-        GenerateurOperateur(Taille);
+        GenererTableauOperateur(Taille);
         Calcul = ConcatenerTableau();
-
+        CalculerResultat(Taille);
 
         return Calcul;
     }
+
+public boolean TestReponse (int Reponse)
+{
+        if (Reponse == Resultat){
+            return true;
+        }else {
+            return false;
+        }
+}
+
+
+
 
 }
