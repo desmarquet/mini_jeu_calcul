@@ -28,6 +28,12 @@ public class tableauscore extends AppCompatActivity {
 
         tableauScores = new TableauScores(this); // Initialisation de la classe TableauScores
 
+        /*if (SysCalcul.Getscore1() == null){
+            textViewTop1.setText(SysCalcul.Getscore1());
+            textViewTop2.setText(SysCalcul.Getscore2());
+            textViewTop3.setText(SysCalcul.Getscore3());
+        }*/
+
         // Récupération des meilleurs scores et affichage dans les TextViews
         afficherMeilleursScores();
     }

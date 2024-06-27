@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         buttonHighscore.setOnClickListener(view -> {
             Toast.makeText(this, "j'affiche un toast", Toast.LENGTH_SHORT).show();
             monTextView.setText(getString(R.string.text_mon_textview));
-            Intent intent = new Intent(this, activityCalcul.class);
+            Intent intent = new Intent(this, tableauscore.class);
             startActivity(intent);
         });
     }
