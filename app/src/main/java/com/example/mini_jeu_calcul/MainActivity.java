@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -31,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
             monTextView.setText(getString(R.string.text_mon_textview));
             Intent intent = new Intent(this, activityCalcul.class);
             startActivity(intent);
-
         });
     }
 

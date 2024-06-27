@@ -32,6 +32,8 @@ public class activityCalcul extends AppCompatActivity {
     private Integer deuxiemeTerme = 0;
     private Integer resultat;
 
+    private SystemCalcul SysCalcul = new SystemCalcul();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +67,8 @@ public class activityCalcul extends AppCompatActivity {
         bouton7.setOnClickListener(view -> appuieBoutonChiffre((Button) view));
         bouton8.setOnClickListener(view -> appuieBoutonChiffre((Button) view));
         bouton9.setOnClickListener(view -> appuieBoutonChiffre((Button) view));
+        SysCalcul.GenererCalcul(2);
+        textViewCalcul.setText(SysCalcul.GetCalcul());
 
     }
     //private TypeOperation typeOperation;
@@ -102,8 +106,15 @@ public class activityCalcul extends AppCompatActivity {
             return true;
         });
         boutonCalculer.setOnMenuItemClickListener(menuItem -> {
-            //verifCalcul();
-            return true;
+            if(SysCalcul.TestReponse(Integer.parseInt(textViewEntrer.getText().toString()) ))
+            {
+                boutonReset();
+                SysCalcul.GenererCalcul(2);
+                textViewCalcul.setText(SysCalcul.GetCalcul());
+                return true;
+            }
+            else
+                return false;
         });
         return super.onCreateOptionsMenu(menu);
     };

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 
 public class SystemCalcul {
+    private String Calcul ;
     private final int ValeurMax = 100 ;
     private double Resultat;
     private ArrayList<Double> TableauValeur = new ArrayList<>();
@@ -128,16 +129,13 @@ public class SystemCalcul {
         }
     }
 
-    public String GenererCalcul (int Taille)
+    public void GenererCalcul (int Taille)
     {
-        String Calcul;
 
         GenererTableauValeur(Taille);
         GenererTableauOperateur(Taille);
         Calcul = ConcatenerTableau();
         CalculerResultat(Taille);
-
-        return Calcul;
     }
 
 public boolean TestReponse (int Reponse)
@@ -149,6 +147,10 @@ public boolean TestReponse (int Reponse)
         }
 }
 
+public String GetCalcul()
+{
+        return Calcul;
+}
 
 
 
