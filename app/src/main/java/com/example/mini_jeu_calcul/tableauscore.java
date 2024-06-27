@@ -31,11 +31,11 @@ public class tableauscore extends AppCompatActivity{
         textViewTop2 = findViewById(R.id.textViewTop2);
         textViewTop3 = findViewById(R.id.textViewTop3);
 
-        if (SysCalcul.Getscore1() == null){
+        /*if (SysCalcul.Getscore1() == null){
             textViewTop1.setText(SysCalcul.Getscore1());
             textViewTop2.setText(SysCalcul.Getscore2());
             textViewTop3.setText(SysCalcul.Getscore3());
-        }
+        }*/
 
     }
 

@@ -23,7 +23,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activityCalcul" android:exported="false" />
+        <activity android:name=".activityCalcul" android:exported="true" />
+        <activity android:name=".tableauscore" android:exported="true" />
         <activity android:name=".SystemCalcul" android:exported="true" />
 
     </application>
