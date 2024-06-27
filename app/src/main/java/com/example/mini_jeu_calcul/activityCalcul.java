@@ -13,9 +13,26 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class activityCalcul extends AppCompatActivity {
 
+<<<<<<< Updated upstream
     private Button bouton0, bouton1, bouton2, bouton3, bouton4, bouton5, bouton6, bouton7, bouton8, bouton9;
     private TextView textViewCalcul, textViewEntrer;
     private Integer premierTerme = 0, deuxiemeTerme = 0, resultat;
+=======
+    private Button bouton0;
+    private Button bouton1;
+    private Button bouton2;
+    private Button bouton3;
+    private Button bouton4;
+    private Button bouton5;
+    private Button bouton6;
+    private Button bouton7;
+    private Button bouton8;
+    private Button bouton9;
+    private TextView textViewCalcul;
+    private TextView textViewEntrer;
+
+
+>>>>>>> Stashed changes
     private SystemCalcul SysCalcul = new SystemCalcul();
 
     @Override
@@ -75,14 +92,22 @@ public class activityCalcul extends AppCompatActivity {
         boutonReset.setOnMenuItemClickListener(menuItem -> {
             textViewCalcul.setText("");
             textViewEntrer.setText("");
+<<<<<<< Updated upstream
             premierTerme = 0;
             deuxiemeTerme = 0;
             resultat = 0;
+=======
+>>>>>>> Stashed changes
             return true;
         });
 
         boutonCalculer.setOnMenuItemClickListener(menuItem -> {
+<<<<<<< Updated upstream
             if (SysCalcul.TestReponse(Integer.parseInt(textViewEntrer.getText().toString()))) {
+=======
+            if(SysCalcul.TestReponse(Integer.parseInt(textViewEntrer.getText().toString()) ))
+            {
+>>>>>>> Stashed changes
                 SysCalcul.GenererCalcul(2);
                 textViewCalcul.setText(SysCalcul.GetCalcul());
                 return true;
