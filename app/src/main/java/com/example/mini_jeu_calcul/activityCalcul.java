@@ -19,6 +19,7 @@ public class activityCalcul extends AppCompatActivity {
     private SystemCalcul SysCalcul = new SystemCalcul();
     private CountDownTimer countDownTimer; // Déclaration du CountDownTimer
 
+    private TableauScores TabScores;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,6 +103,11 @@ public class activityCalcul extends AppCompatActivity {
                 score++;
                 return true;
             } else {
+                TabScores.addScore(score);
+                score = 0;
+                startTimer();
+                SysCalcul.GenererCalcul(2);
+                textViewCalcul.setText(SysCalcul.GetCalcul());
                 return false;
             }
         });
