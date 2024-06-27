@@ -138,7 +138,7 @@ public class SystemCalcul {
         CalculerResultat(Taille);
     }
 
-public boolean TestReponse (int Reponse)
+public boolean TestReponse (double Reponse)
 {
         if (Reponse == Resultat){
             return true;

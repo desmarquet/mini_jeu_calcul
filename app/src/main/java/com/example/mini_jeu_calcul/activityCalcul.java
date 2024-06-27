@@ -82,7 +82,7 @@ public class activityCalcul extends AppCompatActivity {
         });
 
         boutonCalculer.setOnMenuItemClickListener(menuItem -> {
-            if (SysCalcul.TestReponse(Integer.parseInt(textViewEntrer.getText().toString()))) {
+            if (SysCalcul.TestReponse(Double.parseDouble(textViewEntrer.getText().toString()))) {
                 SysCalcul.GenererCalcul(2);
                 textViewCalcul.setText(SysCalcul.GetCalcul());
                 return true;
