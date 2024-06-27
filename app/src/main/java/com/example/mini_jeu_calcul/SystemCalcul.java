@@ -1,7 +1,12 @@
 package com.example.mini_jeu_calcul;
 
+
 import java.util.ArrayList;
 import java.util.Random;
+
+import java.util.Random;
+import java.util.ArrayList;
+
 
 
 public class SystemCalcul {

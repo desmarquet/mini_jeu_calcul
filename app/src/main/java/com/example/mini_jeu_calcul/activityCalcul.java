@@ -10,11 +10,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.appcompat.app.AppCompatActivity;
+
 
 public class activityCalcul extends AppCompatActivity {
 
@@ -35,6 +38,9 @@ public class activityCalcul extends AppCompatActivity {
             textViewCalcul.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        setContentView(R.layout.activity_calcul);
+
 
         bouton0 = findViewById(R.id.button0);
         bouton1 = findViewById(R.id.button1);
@@ -102,6 +108,8 @@ public class activityCalcul extends AppCompatActivity {
         MenuItem boutonCalculer = menu.findItem(R.id.bouton_calculer);
 
         boutonReset.setOnMenuItemClickListener(menuItem -> {
+            textViewCalcul.setText("");
+
             textViewEntrer.setText("");
             return true;
         });

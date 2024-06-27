@@ -6,11 +6,19 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity {
 
+
+    private TextView monTextView;
+
+
+
+    private Button buttonCalcul;
+    private Button buttonHighscore;
     private TextView monTextView;
 
 
@@ -19,8 +27,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         Button buttonCalcul = findViewById(R.id.button_calcul); // Corrected ID
         Button buttonHighscore = findViewById(R.id.button_highscore); // Corrected ID
+
+        buttonCalcul = findViewById(R.id.button_calcul); // Corrected ID
+        buttonHighscore = findViewById(R.id.button_highscore); // Corrected ID
+
         monTextView = findViewById(R.id.titre); // Initialized TextView
 
         buttonCalcul.setOnClickListener(view -> {

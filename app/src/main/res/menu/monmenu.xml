@@ -10,4 +10,5 @@
         android:id="@+id/bouton_calculer"
         android:title="@string/TEXT_BOUTON_CALCULER"
         app:showAsAction="always" />
+
 </menu>
