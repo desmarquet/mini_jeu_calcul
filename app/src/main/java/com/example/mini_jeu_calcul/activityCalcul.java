@@ -56,6 +56,9 @@ public class activityCalcul extends AppCompatActivity {
         textViewEntrer = findViewById(R.id.textview_entrer);
         textClock = findViewById(R.id.textClock); // Initialisation de textClock
 
+        TabScores = new TableauScores(this); // Initialisation de TableauScores avec le contexte
+
+
         bouton0.setOnClickListener(view -> appuieBoutonChiffre((Button) view));
         bouton1.setOnClickListener(view -> appuieBoutonChiffre((Button) view));
         bouton2.setOnClickListener(view -> appuieBoutonChiffre((Button) view));
