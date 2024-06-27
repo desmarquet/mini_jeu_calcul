@@ -7,25 +7,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private Button buttonCalcul;
-
     private TextView monTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        buttonCalcul = findViewById(R.id.button_calcul);
 
+        buttonCalcul = findViewById(R.id.button_calcul); // Corrected ID
+        monTextView = findViewById(R.id.titre); // Initialized TextView
 
         buttonCalcul.setOnClickListener(view -> {
             Toast.makeText(this, "j'affiche un toast", Toast.LENGTH_SHORT).show();
@@ -34,5 +30,4 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
-
 }

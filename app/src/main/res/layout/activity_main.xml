@@ -26,9 +26,15 @@
 
         <Button
             android:id="@+id/button_calcul"
-            android:layout_width="133dp"
-            android:layout_height="68dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="mini jeu" />
+
+        <Button
+            android:id="@+id/button_highscore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="tableau des score" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

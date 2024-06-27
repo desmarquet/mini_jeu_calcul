@@ -19,7 +19,6 @@
     <string name="bouton_moins" translatable="false">-</string>
     <string name="bouton_fois" translatable="false">*</string>
     <string name="bouton_divise" translatable="false">/</string>
-    <string name="TEXT_HELLO_WORLD">Hello World</string>
     <string name="TEXT_BOUTON_HIGH_SCORE">tableau score</string>
     <string name="TEXT_BOUTON_RESET">Reset</string>
     <string name="TEXT_BOUTON_CALCULER">Calculer</string>
