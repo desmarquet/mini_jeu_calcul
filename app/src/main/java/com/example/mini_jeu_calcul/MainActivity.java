@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     private Button buttonCalcul;
+    private Button buttonHighscore;
     private TextView monTextView;
 
     @Override
@@ -21,9 +22,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         buttonCalcul = findViewById(R.id.button_calcul); // Corrected ID
+        buttonHighscore = findViewById(R.id.button_highscore); // Corrected ID
         monTextView = findViewById(R.id.titre); // Initialized TextView
 
         buttonCalcul.setOnClickListener(view -> {
+            Toast.makeText(this, "j'affiche un toast", Toast.LENGTH_SHORT).show();
+            monTextView.setText(getString(R.string.text_mon_textview));
+            Intent intent = new Intent(this, activityCalcul.class);
+            startActivity(intent);
+        });
+
+        buttonHighscore.setOnClickListener(view -> {
             Toast.makeText(this, "j'affiche un toast", Toast.LENGTH_SHORT).show();
             monTextView.setText(getString(R.string.text_mon_textview));
             Intent intent = new Intent(this, activityCalcul.class);
