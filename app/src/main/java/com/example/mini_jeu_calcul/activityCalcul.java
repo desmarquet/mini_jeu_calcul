@@ -15,7 +15,7 @@ public class activityCalcul extends AppCompatActivity {
 
     private Button bouton0, bouton1, bouton2, bouton3, bouton4, bouton5, bouton6, bouton7, bouton8, bouton9;
     private TextView textViewCalcul, textViewEntrer;
-    private Integer premierTerme = 0, deuxiemeTerme = 0, resultat;
+    private Integer score = 0;
     private SystemCalcul SysCalcul = new SystemCalcul();
 
     @Override
@@ -75,9 +75,6 @@ public class activityCalcul extends AppCompatActivity {
         boutonReset.setOnMenuItemClickListener(menuItem -> {
             textViewCalcul.setText("");
             textViewEntrer.setText("");
-            premierTerme = 0;
-            deuxiemeTerme = 0;
-            resultat = 0;
             return true;
         });
 
@@ -85,6 +82,7 @@ public class activityCalcul extends AppCompatActivity {
             if (SysCalcul.TestReponse(Double.parseDouble(textViewEntrer.getText().toString()))) {
                 SysCalcul.GenererCalcul(2);
                 textViewCalcul.setText(SysCalcul.GetCalcul());
+                score++;
                 return true;
             } else {
                 return false;
