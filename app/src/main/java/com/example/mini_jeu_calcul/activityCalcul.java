@@ -108,7 +108,7 @@ public class activityCalcul extends AppCompatActivity {
         boutonCalculer.setOnMenuItemClickListener(menuItem -> {
             if(SysCalcul.TestReponse(Integer.parseInt(textViewEntrer.getText().toString()) ))
             {
-                boutonReset();
+                //boutonReset();
                 SysCalcul.GenererCalcul(2);
                 textViewCalcul.setText(SysCalcul.GetCalcul());
                 return true;
